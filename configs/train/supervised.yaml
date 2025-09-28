@@ -1,0 +1,6 @@
+epochs: 1
+batch_size: 128
+optimizer: adam
+lr: 1e-3
+early_stop_patience: 5
+calibration: null

@@ -1,0 +1,14 @@
+defaults:
+  - dataset: ims
+  - model: elm
+  - train: supervised
+  - eval: default
+  - deploy: host
+  - _self_
+
+seed: 42
+tracking:
+  mlflow_uri: "file:./mlruns"
+  run_name: "${dataset.name}_${model.name}_${now:%Y%m%d_%H%M%S}"
+output_dir: outputs/${now:%Y%m%d}/${dataset.name}/${model.name}
+action: "train"

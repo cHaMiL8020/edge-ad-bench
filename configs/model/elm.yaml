@@ -1,0 +1,5 @@
+name: elm
+hidden_width: 256
+activation: relu
+alpha: 1e-3
+supervised: true

@@ -1,0 +1,7 @@
+name: ims
+type: timeseries
+processed_dir: data/processed/ims
+window: { length: 256, stride: 128 }
+labels: { task: binary }
+splits: { train: 0.7, val: 0.15, test: 0.15 }
+balance: { strategy: "none" }

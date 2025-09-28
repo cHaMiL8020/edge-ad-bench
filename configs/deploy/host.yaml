@@ -1,0 +1,4 @@
+name: host
+device: "cpu"
+runtime: "numpy"
+quant: "none"
