@@ -1,0 +1,38 @@
+name: ims_center
+type: timeseries
+
+raw_root: data/raw/ims_center
+set_no: 2                 # 1|2|3
+
+# For set2/3 there are 4 channels total: B1:[1], B2:[2], B3:[3], B4:[4]
+bearing_id: 1
+channels: [1]
+
+processed_dir: data/processed/ims_center
+
+file_length: 20480
+
+window:
+  enabled: false          # false = use full 20,480-sample file as one sample
+  length: 2048
+  stride: 1024
+
+preprocess:
+  zscore: true
+  clip_value: null
+
+labeling:
+  mode: "cut_index"       # "cut_index" | "last_k"
+  cut_index: 800          # adjust if needed (index of the first faulty file)
+
+labels:
+  task: binary
+  positive_label: 1
+
+splits:
+  train: 0.7
+  val: 0.15
+  test: 0.15
+
+balance:
+  strategy: "none"

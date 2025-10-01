@@ -1,4 +1,4 @@
 metrics: [macro_f1, auroc, precision, recall]
-select_threshold: "youden_j"
+select_threshold: "fixed_fpr:0.02"
 profiling: { n_warmup: 10, n_iters: 100 }
 save_artifacts: true

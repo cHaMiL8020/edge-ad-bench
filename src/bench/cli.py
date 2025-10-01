@@ -1,10 +1,13 @@
 import hydra
 from omegaconf import DictConfig
 from .registry import DATASETS, MODELS
-from .datasets.ims import IMSDataset   # ensure registration
+from .datasets.ims import IMSDataset   # synthetic
+from .datasets.ims_center import IMSCenterDataset # real set1/2/3
 from .models.elm import ELM            # ensure registration
 from .train_loop import run_train
 from .eval_loop import run_eval
+from .models.iforest import IForest
+
 
 @hydra.main(version_base=None, config_path="../../configs", config_name="experiment")
 def main(cfg: DictConfig):

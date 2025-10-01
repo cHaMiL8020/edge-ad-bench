@@ -1,0 +1,3 @@
+name: iforest
+n_estimators: 200
+contamination: "auto"
